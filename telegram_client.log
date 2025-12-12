@@ -1,0 +1,40 @@
+2025-12-08 21:09:38,850 - db - INFO - База данных telegram_messages.db инициализирована успешно
+2025-12-08 21:09:40,150 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-12-08 21:09:42,174 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-12-08 21:10:40,730 - __main__ - INFO - Успешное подключение к Telegram
+2025-12-08 21:10:40,879 - __main__ - INFO - Авторизован как: Андрей Аристархов (@AristarkhovAP)
+2025-12-08 21:10:41,037 - __main__ - INFO - Получено 20 диалогов
+2025-12-08 21:10:41,388 - __main__ - INFO - Получено 2 сообщений из чата 777000
+2025-12-08 21:10:41,788 - __main__ - INFO - Сохранено 2 новых сообщений из 'Telegram', пропущено 0 дубликатов
+2025-12-08 21:10:52,977 - __main__ - INFO - Обработчик новых сообщений настроен
+2025-12-08 21:10:52,978 - __main__ - INFO - Начато прослушивание новых сообщений...
+2025-12-08 21:20:06,745 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-12-08 21:20:06,745 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-12-08 21:20:06,955 - telethon.network.mtprotosender - INFO - Not disconnecting (already have no connection)
+2025-12-08 21:20:07,154 - __main__ - INFO - Отключено от Telegram
+2025-12-08 21:20:07,155 - __main__ - INFO - Программа завершена
+2025-12-08 21:22:34,989 - db - INFO - База данных telegram_messages.db инициализирована успешно
+2025-12-08 21:22:35,089 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-12-08 21:22:35,157 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-12-08 21:22:36,798 - __main__ - INFO - Успешное подключение к Telegram
+2025-12-08 21:22:37,158 - __main__ - INFO - Авторизован как: Андрей Аристархов (@AristarkhovAP)
+2025-12-08 21:22:37,259 - __main__ - INFO - Получено 20 диалогов
+2025-12-08 21:22:37,342 - __main__ - INFO - Получено 2 сообщений из чата 1404952916
+2025-12-08 21:22:37,344 - __main__ - INFO - Сохранено 0 новых сообщений из 'Андрей', пропущено 2 дубликатов
+2025-12-08 21:23:02,121 - __main__ - INFO - Обработчик новых сообщений настроен
+2025-12-08 21:23:02,122 - __main__ - INFO - Начато прослушивание новых сообщений...
+2025-12-08 21:23:51,179 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-12-08 21:23:51,182 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-12-08 21:23:51,388 - telethon.network.mtprotosender - INFO - Not disconnecting (already have no connection)
+2025-12-08 21:23:51,588 - __main__ - INFO - Отключено от Telegram
+2025-12-08 21:23:51,589 - __main__ - INFO - Программа завершена
+2025-12-08 21:27:21,510 - db - INFO - База данных telegram_messages.db инициализирована успешно
+2025-12-08 21:27:21,604 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-12-08 21:27:21,679 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-12-08 21:27:22,379 - __main__ - INFO - Успешное подключение к Telegram
+2025-12-08 21:27:22,464 - __main__ - INFO - Авторизован как: Андрей Аристархов (@AristarkhovAP)
+2025-12-08 21:27:22,584 - __main__ - INFO - Получено 20 диалогов
+2025-12-08 21:27:22,967 - __main__ - INFO - Получено 3 сообщений из чата 1404952916
+2025-12-08 21:27:22,969 - __main__ - INFO - Сохранено 0 новых сообщений из 'Андрей', пропущено 3 дубликатов
+2025-12-08 21:27:24,315 - __main__ - INFO - Обработчик новых сообщений настроен
+2025-12-08 21:27:24,315 - __main__ - INFO - Начато прослушивание новых сообщений...

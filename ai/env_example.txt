@@ -1,0 +1,9 @@
+# GigaChat API credentials
+# Получите их на https://developers.sber.ru/portal/products/gigachat
+# Скопируйте этот файл в .env и укажите ваши credentials
+CLIENT_ID=your_client_id_here
+CLIENT_SECRET=your_client_secret_here
+
+# SSL verification (для корпоративных сетей с самоподписанными сертификатами)
+# Установите в false, если возникают ошибки SSL сертификата
+SSL_VERIFY=false
