@@ -115,12 +115,12 @@ class GigaChatClient:
     def list_models(self):
         url = f"{API_BASE}/models"
         headers = self._headers()
-        resp = requests.get(url, headers=headers, timeout=30)
+        resp = requests.get(url, headers=headers, verify=False, timeout=30)
 
         if resp.status_code == 401:
             self.refresh_token()
             headers = self._headers()
-            resp = requests.get(url, headers=headers, timeout=30)
+            resp = requests.get(url, headers=headers, verify=False, timeout=30)
 
         resp.raise_for_status()
         return resp.json()
