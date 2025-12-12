@@ -2,6 +2,7 @@ import os
 import time
 import requests
 import telebot
+from telebot import formatting
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -148,10 +149,14 @@ def start(m):
 def models(m):
     try:
         data = gigachat.list_models()
-        text = f"<b>Ответ /models:</b>\n<code>{str(data)[:3500]}</code>"
+        escaped = formatting.escape_html(str(data)[:3500])
+        text = f"<b>Ответ /models:</b>\n<code>{escaped}</code>"
         bot.send_message(m.chat.id, text)
     except Exception as e:
-        bot.send_message(m.chat.id, f"Ошибка при получении моделей: <code>{e}</code>")
+        bot.send_message(
+            m.chat.id,
+            f"Ошибка при получении моделей: <code>{formatting.escape_html(str(e))}</code>",
+        )
 
 
 @bot.message_handler(commands=["setmodel"])
@@ -162,7 +167,10 @@ def setmodel(m):
         bot.send_message(m.chat.id, "Использование: /setmodel <имя_модели>")
         return
     GIGACHAT_MODEL = parts[1].strip()
-    bot.send_message(m.chat.id, f"Ок, текущая модель: <b>{GIGACHAT_MODEL}</b>")
+    bot.send_message(
+        m.chat.id,
+        f"Ок, текущая модель: <b>{formatting.escape_html(GIGACHAT_MODEL)}</b>",
+    )
 
 
 @bot.message_handler(content_types=["text"])
@@ -177,15 +185,21 @@ def handle_text(m):
         answer = gigachat.chat(user_text, model=GIGACHAT_MODEL)
         if len(answer) > 4000:
             answer = answer[:4000] + "\n...\n(обрезано)"
-        bot.send_message(m.chat.id, answer)
+        bot.send_message(m.chat.id, formatting.escape_html(answer))
     except requests.HTTPError as e:
         try:
             body = e.response.text
         except Exception:
             body = str(e)
-        bot.send_message(m.chat.id, f"HTTP ошибка от GigaChat: <code>{body}</code>")
+        bot.send_message(
+            m.chat.id,
+            f"HTTP ошибка от GigaChat: <code>{formatting.escape_html(body)}</code>",
+        )
     except Exception as e:
-        bot.send_message(m.chat.id, f"Ошибка: <code>{e}</code>")
+        bot.send_message(
+            m.chat.id,
+            f"Ошибка: <code>{formatting.escape_html(str(e))}</code>",
+        )
 
 
 if __name__ == "__main__":
