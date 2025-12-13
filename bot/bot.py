@@ -30,6 +30,7 @@ if missing:
 
 OAUTH_URL = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
 API_BASE = "https://gigachat.devices.sberbank.ru/api/v1"
+GIGACHAT_CERT_PATH = "f:/sert/sert.txt"
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN, parse_mode="HTML")
 
@@ -56,7 +57,13 @@ class GigaChatClient:
         }
         data = {"scope": self.scope}
 
-        resp = requests.post(OAUTH_URL, headers=headers, data=data, verify=False, timeout=30)
+        resp = requests.post(
+            OAUTH_URL,
+            headers=headers,
+            data=data,
+            verify=GIGACHAT_CERT_PATH,
+            timeout=30,
+        )
         resp.raise_for_status()
         payload = resp.json()
 
@@ -97,13 +104,25 @@ class GigaChatClient:
         }
 
         headers = self._headers()
-        resp = requests.post(url, headers=headers, json=body, verify=False, timeout=60)
+        resp = requests.post(
+            url,
+            headers=headers,
+            json=body,
+            verify=GIGACHAT_CERT_PATH,
+            timeout=60,
+        )
 
         # если токен протух — обновим и повторим 1 раз
         if resp.status_code == 401:
             self.refresh_token()
             headers = self._headers()
-            resp = requests.post(url, headers=headers, json=body, verify=False, timeout=60)
+            resp = requests.post(
+                url,
+                headers=headers,
+                json=body,
+                verify=GIGACHAT_CERT_PATH,
+                timeout=60,
+            )
 
         resp.raise_for_status()
         data = resp.json()
@@ -116,12 +135,22 @@ class GigaChatClient:
     def list_models(self):
         url = f"{API_BASE}/models"
         headers = self._headers()
-        resp = requests.get(url, headers=headers, verify=False, timeout=30)
+        resp = requests.get(
+            url,
+            headers=headers,
+            verify=GIGACHAT_CERT_PATH,
+            timeout=30,
+        )
 
         if resp.status_code == 401:
             self.refresh_token()
             headers = self._headers()
-            resp = requests.get(url, headers=headers, verify=False, timeout=30)
+            resp = requests.get(
+                url,
+                headers=headers,
+                verify=GIGACHAT_CERT_PATH,
+                timeout=30,
+            )
 
         resp.raise_for_status()
         return resp.json()
